@@ -34,7 +34,7 @@ class Comunio:
                     'action':'login'}
         headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain","User-Agent": user_agent}
         req = self.session.post('http://'+self.domain+'/login.phtml',headers=headers,data=payload).content
-        if 'puntos en proceso' in req or 'points in process' in req:
+        if b'puntos en proceso' in req or 'points in process' in req:
             print ('Comunio webpage not available.')
             return
 
