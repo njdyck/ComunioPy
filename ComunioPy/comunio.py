@@ -21,7 +21,7 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 F
 
 class Comunio:
 
-    def __init__(self,username,password):
+    def __init__(self,username,password,league):
         self.username = username
         self.password = password
         self.domain = 'www.comunio.de'
@@ -33,7 +33,7 @@ class Comunio:
                     'pass':self.password,
                     'action':'login'}
         headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain","User-Agent": user_agent}
-        req = self.session.post('http://'+self.domain+'/login.phtml',headers=headers,data=payload).content
+        req = self.session.post('http://www.comunio.de/login.phtml',headers=headers,data=payload).content
         if 'puntos en proceso' in req or 'points in process' in req:
             print ('Comunio webpage not available.')
             return
