@@ -21,10 +21,10 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 F
 
 class Comunio:
 
-    def __init__(self,username,password,league):
+    def __init__(self,username,password):
         self.username = username
         self.password = password
-        self.domain = Leagues[league]
+        self.domain = 'www.comunio.de'
         self.session = requests.session()
         self.login()
 
